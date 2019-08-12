@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>My web application</title>
+    <title>My pet-web application</title>
 </head>
 <body>
     <h2>Login or password are wrong! Input correct values, please!</h2>

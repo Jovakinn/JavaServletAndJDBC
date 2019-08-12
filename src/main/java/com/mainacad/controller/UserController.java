@@ -22,16 +22,20 @@ public class UserController extends HttpServlet {
         String password = req.getParameter("password");
 
         User user = UserService.getAuthUser(login, password);
-        if (user != null) {
+        /**
+         * Check authorization of user,
+         * all pages might be changed...
+          */
+        if (user != null){
 
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/jsp/user-cabinet.jsp");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/jsp/user-cabinet.jsp");
             req.getSession().setAttribute("user-name", user.getFirstName() + " " + user.getLastName());
-            dispatcher.forward(req, resp);
-            
+            requestDispatcher.forward(req, resp);
+
         } else {
 
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/jsp/wrong-auth.jsp");
-            dispatcher.forward(req, resp);
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("/jsp/wrong-auth.jsp");
+            requestDispatcher.forward(req, resp);
         }
     }
 }

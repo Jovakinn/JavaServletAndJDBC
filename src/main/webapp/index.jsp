@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>My web application</title>
+    <title>My pet-web application</title>
 </head>
 <body>
     <h2>Hello, this is the start page</h2>
